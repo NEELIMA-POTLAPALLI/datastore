@@ -1,0 +1,42 @@
+<h1>Data Store Application - Products </h1>
+
+<div class="container">
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <label class="label label-default">Select Country</label>
+      <select (change)="onCountryChangeDropdown()" [(ngModel)]="selectedItem">
+        <option *ngFor="let item of countryViewModel" [value]="item.currencyCode">{{ item.name }}</option>
+      </select>
+    </div>
+
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tbody>
+          <tr *ngFor="let product of productViewModel;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+
+  </div>
+
+
+
+
+  <router-outlet />
